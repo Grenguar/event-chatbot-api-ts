@@ -1,0 +1,40 @@
+service: chatbot-api
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline 
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-1
+  logRetentionInDays: 3
+  environment:
+    TABLE_NAME:  ${ssm:table_name~true}
+    RECAST_TOKEN: ${ssm:recast_token~true}
+
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:DeleteItem
+      - dynamodb:GetItem
+      - dynamodb:PutItem
+      - dynamodb:ScanItem
+      - "translate:*"
+    Resource:
+      - '*'
+  
+functions:
+  chatBotApiAnswer:
+    handler: handler.send
+    events:
+      - http:
+          path: webhook
+          method: post
+          cors: true
+
+package:
+  exclude:
+    - node_modules/**/*
+  include:
+    handler.ts

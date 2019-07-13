@@ -1,0 +1,29 @@
+{
+  "name": "event-chatbot-api-ts",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest --watch",
+    "local": "serverless invoke local -f endpoint -p data/event.json",
+    "lint": "tslint 'src/*.{ts,tsx}'"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.493.0",
+    "recastai": "^4.0.0",
+    "serverless": "^1.47.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-microsoft-contrib": "^6.2.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.28",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^8.0.57",
+    "jest": "^24.8.0",
+    "serverless-offline": "^5.7.3",
+    "serverless-plugin-typescript": "^1.1.7",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  }
+}
