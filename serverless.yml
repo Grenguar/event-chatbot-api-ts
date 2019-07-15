@@ -14,15 +14,15 @@ provider:
     RECAST_TOKEN: ${ssm:recast_token~true}
 
   iamRoleStatements:
-  - Effect: Allow
-    Action:
-      - dynamodb:DeleteItem
-      - dynamodb:GetItem
-      - dynamodb:PutItem
-      - dynamodb:ScanItem
-      - "translate:*"
-    Resource:
-      - '*'
+    - Effect: Allow
+      Action:
+        - dynamodb:DeleteItem
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:ScanItem
+        - "translate:*"
+      Resource:
+        - '*'
   
 functions:
   chatBotApiAnswer:
