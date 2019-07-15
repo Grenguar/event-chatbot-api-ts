@@ -4,9 +4,8 @@ import { TranslateTextRequest } from "aws-sdk/clients/translate";
 const translate = new AWS.Translate();
 
 export default class Translator {
-
   public translateMessage(message: string, sourceLang: string, targetLang: string): Promise<any> {
-    return (new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const params: TranslateTextRequest = {
         Text: message,
         SourceLanguageCode: sourceLang,
@@ -20,6 +19,6 @@ export default class Translator {
           resolve(data);
         }
       });
-    })
+    });
   }
 }
