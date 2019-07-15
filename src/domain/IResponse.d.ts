@@ -1,4 +1,4 @@
-export default interface IResponse {
+export default interface ILambdaResponse {
   statusCode: number;
   headers?: object;
   body: string;

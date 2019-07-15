@@ -20,9 +20,6 @@ api.post(
     const intentFromtranslatedMessage = await getIntentFromEngMessage(analysedText);
     const responseFromDb = await getTranslatedAnswerToUser(intentFromtranslatedMessage, originalMsgLanguage);
     if (supportedLanguageByDb(originalMsgLanguage)) {
-      if (isJsonFormattedAnswer(intentFromtranslatedMessage)) {
-        return messageStructures.customContentReply(JSON.parse(responseFromDb));
-      }
       return messageStructures.textMessageReply(responseFromDb);
     } else {
       const translatedBotAnswer = await getTranslatedMessage(responseFromDb, "en", originalMsgLanguage);
