@@ -1,8 +1,10 @@
 import { Handler, Context, Callback } from "aws-lambda";
-import Translator from "./src/translator";
+import ChatBotReply from "./src/chatBotReply";
 
 export const send: Handler = async (event: any, context: Context, callback: Callback) => {
-  console.log("Sending reply to bot lambda function started");
+  const originalMessage = event.body.nlp.source;
+  const chatBotReply: ChatBotReply = new ChatBotReply(originalMessage);
+  await chatBotReply.send();
 
   callback(null, {
     statusCode: 200,

@@ -34,7 +34,7 @@ functions:
           cors: true
 
 package:
-  exclude:
-    - node_modules/**/*
+  # exclude:
+  #   - node_modules/**/*
   include:
     handler.ts
