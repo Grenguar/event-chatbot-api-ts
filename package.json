@@ -8,7 +8,7 @@
     "lint": "tslint 'src/*.{ts,tsx}'"
   },
   "dependencies": {
-    "aws-sdk": "^2.493.0",
+    "aws-sdk": "^2.814.0",
     "recastai": "^4.0.0",
     "serverless": "^1.47.0",
     "tslint": "^5.18.0",
