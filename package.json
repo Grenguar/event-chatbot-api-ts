@@ -10,7 +10,7 @@
   "dependencies": {
     "aws-sdk": "^2.493.0",
     "recastai": "^4.0.0",
-    "serverless": "^1.47.0",
+    "serverless": "^1.83.3",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
